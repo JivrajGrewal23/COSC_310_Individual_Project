@@ -14,18 +14,21 @@ This first API is being used in the chatbot is a wiki api where the chatbot can 
   
 Example convo:
 Explain to me Zach Lavine
+                                 
                                  ChatBot: Zachary LaVine (born March 10, 1995) is an American professional 
                                           basketball player for the Chicago Bulls of the National Basketball 
                                           Association (NBA).
                                           
 Explain to me FIFA World Cup
-                                 ChatBot: The FIFA World Cup, often simply called the World Cup, is an international 
+                                 
+                                  ChatBot: The FIFA World Cup, often simply called the World Cup, is an international 
                                           association football competition contested by the senior men's national teams 
                                           of the members of the Fédération Internationale de Football Association (FIFA), 
                                           the sport's global governing body.
                                           
 Explain to me Hong Kong sevens
-    <block>   ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
+                                  
+                                  ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
                                           on the World Rugby Sevens Series competition. </block>
                                                       
                                                       
