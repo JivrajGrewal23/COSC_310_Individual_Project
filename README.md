@@ -1,7 +1,6 @@
-# Assignment-3
+# Indiviual Project
 
-## To use ChatBotWithWordnet.py you need to pip install vaderSentiment, NLTK, and tkinter
-## To user ChatBotWitPyDictionary.py you need to pip install PyDictionary, vaderSentiment, NLTK, and tkinter
+## To use ChatBot.py you need to pip install vaderSentiment, NLTK, tkinter, and PyDictionary
 
 This is a project to create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This bot was built off of the previous bot created in assignment 2.
 ChatBot.ipynb was migrated to ChatBot.py, see commits to Chatbot.ipynb to see original structure of code before it was migrated and the contributors
