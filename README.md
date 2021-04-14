@@ -6,33 +6,51 @@ This is a  indiviual project to create a functional chatbot for COSC 310. The us
 
 This program uses modified code from https://github.com/nltk/nltk/blob/develop/nltk/chat/util.py which is open source.
 
-## Features that were completed for the indiviual project
+## New Features that were completed for the indiviual project
 For the indiviual part I used two api's which are were google translate and wikipedia.
 
 # Wikipedia api: to use first pip install wikipedia
-This first API is being used in the chatbot is a wiki api where the chatbot can be asked about a certian topic and the chatbot will return 1 sentence from the wikipedia page that the user asked about. To trigger this the user will ask the chatbot explain to me <topic> and the chatbot will scrape the wiki page and return the 1st sentence on the wiki topic page.
+This first API is being used in the chatbot is a wiki api where the chatbot can be asked about a certian topic and the chatbot will return 1 sentence from the wikipedia page that the user asked about. To trigger this the user will ask the chatbot explain to me <topic> and the chatbot will scrape the wiki page and return the 1st sentence on the wiki topic page. Some of the limitations of this api is when the user is not specific on what they ask. An example would be if the user asks explain to me Lebron James and the ChatBot crashes due to it not being specific enough.
   
 Example convo:
-Explain to me Zach Lavine
+User: Explain to me Zach Lavine
                                  
                                  ChatBot: Zachary LaVine (born March 10, 1995) is an American professional 
                                           basketball player for the Chicago Bulls of the National Basketball 
                                           Association (NBA).
                                           
-Explain to me FIFA World Cup
+User: Explain to me FIFA World Cup
                                  
-                                  ChatBot: The FIFA World Cup, often simply called the World Cup, is an international 
+                                 ChatBot: The FIFA World Cup, often simply called the World Cup, is an international 
                                           association football competition contested by the senior men's national teams 
                                           of the members of the Fédération Internationale de Football Association (FIFA), 
                                           the sport's global governing body.
                                           
-Explain to me Hong Kong sevens
+User: Explain to me Hong Kong sevens
                                   
-                                  ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
-                                          on the World Rugby Sevens Series competition. </block>
-                                                      
-                                                      
-## Features that were completed in the group project
+                                 ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
+                                          on the World Rugby Sevens Series competition. 
+                                          
+## Google Translate api: to use first pip install googletrans==3.1.0a0
+This second API is a translator and can be used when the user input is in a differnet language. The ChatBot will sense that the user input is in a different language and will take that input and translate it to english so the chatbot can understand what the user asked. When the ChatBot translates the user input to english it will return the output in english for the user. The translate api supports multiple languages but can be finicky with langauges that have special characters. User who speak spanish, french, german will have the best exprience.
+
+Example convo when the user speak russian:
+User: Привет (eng: Hello)
+                                 
+                                 ChatBot: Hi, what is your name?
+
+When the user speaks finnish:                                
+User: nimeni on jeff (eng: My name is jeff)
+
+                                 ChatBot: Hello jeff, my name is sports bot. Do you play any sports?
+                                 
+When the user speaks dutch:
+User: wanneer is het volgende WK? (eng:when is the next world cup?)
+
+                                  ChatBot: Next year in Qatar
+                    
+- - -                                                       
+## Old Features that were completed in the group project
 
 Group project features have been implemented in this bot, including POS tagging, sentiment analysis, entity recognition, and synonym recognition.
 
