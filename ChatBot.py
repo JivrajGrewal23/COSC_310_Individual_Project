@@ -13,6 +13,8 @@ nltk.download('averaged_perceptron_tagger')
 from nltk import word_tokenize
 from PyDictionary import PyDictionary
 import wiki
+import Trans
+
 
 
 # This is a modified converse function from nltk.chat.util
@@ -145,6 +147,7 @@ def sendClick():
     truth1 = checkForNum(userInput)
     truth2 = checkPolarity(userInput)
     truth3 = wiki.wordSplit(userInput)
+
     if (truth == True):
         reply = "Sorry. I don't understand currency well. Can you try again?"
     else:
@@ -158,6 +161,7 @@ def sendClick():
                     reply = wiki.wikiLookup(userInput)
                 else:
                     reply = tryConverseWithSynonyms(userInput)
+    userInput = Trans.translation(userInput)
     output = ""
     chatWin.configure(state="normal")
     if "To begin" in chatWin.get("1.0", END):
