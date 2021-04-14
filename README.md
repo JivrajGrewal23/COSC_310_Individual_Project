@@ -56,8 +56,9 @@ User: wanneer is het volgende WK? (eng:when is the next world cup?)
 </br>  
 
 
-*Old Features from A3 update*                    
-- - -                                                       
+                    
+- - -
+*Old Features from A3 update*                                                       
 ## Old Features that were completed in the group project
 
 Group project features have been implemented in this bot, including POS tagging, sentiment analysis, entity recognition, and synonym recognition.
