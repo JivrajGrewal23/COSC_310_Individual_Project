@@ -25,14 +25,11 @@ Explain to me FIFA World Cup
                                           the sport's global governing body.
                                           
 Explain to me Hong Kong sevens
-                                 ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
+  <block>                               ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
                                           on the World Rugby Sevens Series competition.
 
     
-    
-    <block>
-This is a block quote.
-</block>
+    </block>
                                                       
                                                       
 ## Features that were completed in the group project
