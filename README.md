@@ -2,11 +2,36 @@
 
 ## To use ChatBot.py you need to pip install vaderSentiment, NLTK, tkinter, and PyDictionary
 
-This is a project to create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This bot was built off of the previous bot created in assignment 2.
-ChatBot.ipynb was migrated to ChatBot.py, see commits to Chatbot.ipynb to see original structure of code before it was migrated and the contributors
+This is a  indiviual project to create a functional chatbot for COSC 310. The user should be able to hold basic conversation with the bot about sports. The role the agent will take is that of a friend, and the user can ask the agent questions about sports. This bot was built off of the previous bot created in assignment 2.
+
 This program uses modified code from https://github.com/nltk/nltk/blob/develop/nltk/chat/util.py which is open source.
 
-New features have been implemented in this bot, including POS tagging, sentiment analysis, entity recognition, and synonym recognition.
+## Features that were completed for the indiviual project
+For the indiviual part I used two api's which are were google translate and wikipedia.
+
+# Wikipedia api: to use first pip install wikipedia
+This first API is being used in the chatbot is a wiki api where the chatbot can be asked about a certian topic and the chatbot will return 1 sentence from the wikipedia page that the user asked about. To trigger this the user will ask the chatbot explain to me <topic> and the chatbot will scrape the wiki page and return the 1st sentence on the wiki topic page.
+  
+Example convo:
+Explain to me Zach Lavine
+                                 ChatBot: Zachary LaVine (born March 10, 1995) is an American professional 
+                                          basketball player for the Chicago Bulls of the National Basketball 
+                                          Association (NBA).
+                                          
+Explain to me FIFA World Cup
+                                 ChatBot: The FIFA World Cup, often simply called the World Cup, is an international 
+                                          association football competition contested by the senior men's national teams 
+                                          of the members of the Fédération Internationale de Football Association (FIFA), 
+                                          the sport's global governing body.
+                                          
+Explain to me Hong Kong sevens
+                                 ChatBot: The Hong Kong Sevens (Chinese: 香港國際七人欖球賽) is considered the premier tournament 
+                                          on the World Rugby Sevens Series competition.
+                                                      
+                                                      
+## Features that were completed in the group project
+
+Group project features have been implemented in this bot, including POS tagging, sentiment analysis, entity recognition, and synonym recognition.
 
 Sentiment analysis adds to the bot by analyzing the user input, judging the overall sentiment, and providing an appropriate response if necessary. This was done by using the 'SentimentIntensityAnalyzer' function from the 'vaderSentiment' tool. When the user inputs a question/phrase, it is assigned a numerical value based on the overall sentiment (positive is a generally nice input, negative is a generally mean input). If the phrase is negative, the bot will get angry and tell the user it wasn't nice.
 
