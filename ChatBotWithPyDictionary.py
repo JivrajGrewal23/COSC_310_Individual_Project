@@ -11,6 +11,7 @@ nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 from nltk import word_tokenize
 from PyDictionary import PyDictionary
+import wiki
 
 
 
@@ -142,6 +143,7 @@ def sendClick():
     truth = checkForCurrency(userInput)
     truth1 = checkForNum(userInput)
     truth2 = checkPolarity(userInput)
+    truth3 = wiki.wordSplit(userInput)
     if (truth == True):
         reply = "Sorry. I don't understand currency well. Can you try again?"
     else:
@@ -151,7 +153,10 @@ def sendClick():
             if (truth2 == True):
                 reply = "Well that does not seem very nice!"
             else:
-                reply = tryConverseWithSynonyms(userInput)
+                if(truth3 == True):
+                    reply = wiki.wikiLookup(userInput)
+                else:
+                    reply = tryConverseWithSynonyms(userInput)
     output = ""
     chatWin.configure(state="normal")
     if "To begin" in chatWin.get("1.0", END):
