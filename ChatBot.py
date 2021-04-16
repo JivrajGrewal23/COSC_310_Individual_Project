@@ -7,19 +7,18 @@ from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from nltk.corpus import wordnet
-
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 from nltk import word_tokenize
 from PyDictionary import PyDictionary
 import wiki
-import Trans
-
+import trans
 
 
 # This is a modified converse function from nltk.chat.util
 class modifiedChat(Chat):
     def converse(self, user_input):
+        
         while user_input[-1] in "!.":
             user_input = user_input[:-1]
         return self.respond(user_input)
@@ -80,7 +79,6 @@ def checkPolarity(userInput):
         truth = True
     return truth
 
-
 # this just adds commas based on simple rules
 def addComma(text):
     parsed_text = text.split(' ')
@@ -90,8 +88,9 @@ def addComma(text):
             parsed_text[i] = 'yes,'
         if word == 'no':
             parsed_text[i] = 'no,'
-        i += 1
+        i+=1
     return ' '.join(parsed_text)
+
 
 
 # this function replaces words with synonyms and tries to converse with them
@@ -107,20 +106,19 @@ def tryConverseWithSynonyms(userIn):
     for word in words:
         toMutate = tokens
         # to prevent long 'thinking' times we will only try changing adjectives, and verbs
-
-        if 'JJ' in word[1] or 'VB' in word[1]:
+        
+        if 'JJ' in word[1] or 'VB' in word[1]: 
             # get all the synsets of the adjectives and verbs
             synset = dictionary.synonym(word[0])
             # mutate the original sentence with the synonyms
             for synonym in synset:
                 toMutate[i] = synonym
                 # This monster just detokenizes a string
-                mutated = "".join([" " + i if not i.startswith("'") and i not in string.punctuation else i for i in
-                                   tokens]).strip().lower()
+                mutated = "".join([" "+i if not i.startswith("'") and i not in string.punctuation else i for i in tokens]).strip().lower()
                 # add the mutated sentence to the queue
                 if mutated not in queue:
-                    queue.append(mutated)
-        i += 1
+                   queue.append(mutated)
+        i+=1
     # iterate through the queue
     while len(queue) != 0:
         test = queue.pop()
@@ -131,8 +129,7 @@ def tryConverseWithSynonyms(userIn):
         if sorry[0] != "Sorry":
             return reply
     return 'Sorry can you try again, I do not understand'
-
-
+       
 
 # This function retrieves the userInput and then passes it to the console
 def sendClick():
@@ -140,14 +137,14 @@ def sendClick():
     userInput = userInput
     text = word_tokenize(userInput)
     print(nltk.pos_tag(text))
-    words = nltk.pos_tag(text)
+    words = nltk.pos_tag(text)    
     userInput = addComma(userInput)
     mesWin.delete("1.0", END)
     truth = checkForCurrency(userInput)
     truth1 = checkForNum(userInput)
     truth2 = checkPolarity(userInput)
     truth3 = wiki.wordSplit(userInput)
-
+    # userInput = trans.isEng(userInput) # for this to work pip install pip install googletrans==3.1.0a0 then uncomment
     if (truth == True):
         reply = "Sorry. I don't understand currency well. Can you try again?"
     else:
@@ -161,7 +158,6 @@ def sendClick():
                     reply = wiki.wikiLookup(userInput)
                 else:
                     reply = tryConverseWithSynonyms(userInput)
-    userInput = Trans.translation(userInput)
     output = ""
     chatWin.configure(state="normal")
     if "To begin" in chatWin.get("1.0", END):
@@ -172,6 +168,8 @@ def sendClick():
     chatWin.insert(END, output)
     chatWin.see(END)
     chatWin.configure(state="disabled")
+
+
 
 
 # generate the  and run the chat interface
