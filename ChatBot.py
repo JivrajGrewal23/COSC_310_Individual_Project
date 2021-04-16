@@ -144,7 +144,7 @@ def sendClick():
     truth1 = checkForNum(userInput)
     truth2 = checkPolarity(userInput)
     truth3 = wiki.wordSplit(userInput)
-    # userInput = trans.isEng(userInput) # for this to work pip install pip install googletrans==3.1.0a0 then uncomment
+    # userInput = trans.isEng(userInput) # for this to work pip install googletrans==3.1.0a0 then uncomment
     if (truth == True):
         reply = "Sorry. I don't understand currency well. Can you try again?"
     else:
